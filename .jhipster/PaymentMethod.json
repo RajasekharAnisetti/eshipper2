@@ -1,0 +1,31 @@
+{
+    "name": "PaymentMethod",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "apPayable",
+            "otherEntityRelationshipName": "paymentMethod",
+            "relationshipName": "apPayable"
+        }
+    ],
+    "changelogDate": "20191022102134",
+    "entityTableName": "payment_method",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
