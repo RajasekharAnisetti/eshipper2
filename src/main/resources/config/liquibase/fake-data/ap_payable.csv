@@ -1,0 +1,11 @@
+id;invoice_date;invoice_amount;invoice_no;comment;is_dispute;doc_path;gst;hst;pst;qst;total_amount;balance_due;due_date;created_date;updated_date
+1;2019-10-22;9;Fish multi-byte Savings Account;Computer Practical Fresh Pants;true;alarm;2058;5641;96990;72199;83244;93855;2019-10-22;2019-10-22;2019-10-22
+2;2019-10-21;2;methodology Albania;Home Namibia;false;Gorgeous Frozen Pants;23277;45606;9060;78517;61838;19967;2019-10-22;2019-10-21;2019-10-21
+3;2019-10-21;5;HDD;Table Small Frozen Sausages Planner;true;access Intelligent;68423;24102;44015;68326;12203;60999;2019-10-21;2019-10-21;2019-10-22
+4;2019-10-22;10;Digitized invoice;convergence;false;Georgia Industrial;84228;77513;44975;93949;39515;89482;2019-10-21;2019-10-21;2019-10-21
+5;2019-10-21;3;Georgia;Tasty Plastic Pizza scale;false;generating compelling;28093;60703;54269;27599;14092;29627;2019-10-21;2019-10-22;2019-10-22
+6;2019-10-22;11;index orange;Jewelery;false;monitor 1080p Checking Account;92630;35846;65107;11586;91495;86310;2019-10-21;2019-10-21;2019-10-21
+7;2019-10-22;1;envisioneer;moratorium pixel withdrawal;true;Junction Frozen;71324;84891;76078;72172;56127;23598;2019-10-21;2019-10-22;2019-10-21
+8;2019-10-22;6;partnerships Grocery Intelligent;Dynamic;false;Montana;69551;90756;13933;24929;60441;41038;2019-10-21;2019-10-21;2019-10-22
+9;2019-10-22;11;Money Market Account;Salad Web virtual;true;RSS;80367;21844;18657;41650;89255;88328;2019-10-21;2019-10-22;2019-10-21
+10;2019-10-22;10;support Gorgeous;withdrawal;false;cutting-edge ability Hat;53408;41741;48482;22210;69243;11986;2019-10-22;2019-10-22;2019-10-22

@@ -1,0 +1,110 @@
+<div>
+    <h2 id="page-heading">
+        <span>Ap Payables</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-ap-payable" [routerLink]="['/ap-payable/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create a new Ap Payable
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="apPayables?.length === 0">
+        <span>No apPayables found</span>
+    </div>
+    <div class="table-responsive" *ngIf="apPayables?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span>ID</span></th>
+            <th scope="col" ><span>Invoice Date</span></th>
+            <th scope="col" ><span>Invoice Amount</span></th>
+            <th scope="col" ><span>Invoice No</span></th>
+            <th scope="col" ><span>Comment</span></th>
+            <th scope="col" ><span>Is Dispute</span></th>
+            <th scope="col" ><span>Doc Path</span></th>
+            <th scope="col" ><span>Gst</span></th>
+            <th scope="col" ><span>Hst</span></th>
+            <th scope="col" ><span>Pst</span></th>
+            <th scope="col" ><span>Qst</span></th>
+            <th scope="col" ><span>Total Amount</span></th>
+            <th scope="col" ><span>Balance Due</span></th>
+            <th scope="col" ><span>Due Date</span></th>
+            <th scope="col" ><span>Created Date</span></th>
+            <th scope="col" ><span>Updated Date</span></th>
+            <th scope="col" ><span>Ap Payee Type</span></th>
+            <th scope="col" ><span>Ap Payee</span></th>
+            <th scope="col" ><span>Ap Category Type</span></th>
+            <th scope="col" ><span>Payment Method</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let apPayable of apPayables ;trackBy: trackId">
+                <td><a [routerLink]="['/ap-payable', apPayable.id, 'view' ]">{{apPayable.id}}</a></td>
+                <td>{{apPayable.invoiceDate | date:'mediumDate'}}</td>
+                <td>{{apPayable.invoiceAmount}}</td>
+                <td>{{apPayable.invoiceNo}}</td>
+                <td>{{apPayable.comment}}</td>
+                <td>{{apPayable.isDispute}}</td>
+                <td>{{apPayable.docPath}}</td>
+                <td>{{apPayable.gst}}</td>
+                <td>{{apPayable.hst}}</td>
+                <td>{{apPayable.pst}}</td>
+                <td>{{apPayable.qst}}</td>
+                <td>{{apPayable.totalAmount}}</td>
+                <td>{{apPayable.balanceDue}}</td>
+                <td>{{apPayable.dueDate | date:'mediumDate'}}</td>
+                <td>{{apPayable.createdDate | date:'mediumDate'}}</td>
+                <td>{{apPayable.updatedDate | date:'mediumDate'}}</td>
+                <td>
+                    <div *ngIf="apPayable.apPayeeTypeId">
+                        <a [routerLink]="['/ap-payee-type', apPayable.apPayeeTypeId , 'view' ]" >{{apPayable.apPayeeTypeId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="apPayable.apPayeeId">
+                        <a [routerLink]="['/ap-payee', apPayable.apPayeeId , 'view' ]" >{{apPayable.apPayeeId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="apPayable.apCategoryTypeId">
+                        <a [routerLink]="['/ap-category-type', apPayable.apCategoryTypeId , 'view' ]" >{{apPayable.apCategoryTypeId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="apPayable.paymentMethodId">
+                        <a [routerLink]="['/payment-method', apPayable.paymentMethodId , 'view' ]" >{{apPayable.paymentMethodId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/ap-payable', apPayable.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/ap-payable', apPayable.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/ap-payable', { outlets: { popup: apPayable.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
